@@ -1,0 +1,49 @@
+<div id="about" class="page">
+	<div class="header">
+		<div class="btn-group pull-left">
+			<button class="btn dropdown-toggle icon-align-justify" data-toggle="dropdown"></button>
+			<ul class="dropdown-menu">
+				<li ng-show="homeEnabled"><a href="#home" class="icon-home"><span>Accueil</span></a></li>
+				<li><a href="#settings" class="icon-cog"><span>Réglages</span></a></li>
+				<li><a href="#help" class="icon-question-sign"><span>Aide</span></a></li>
+				<li class="divider"></li>
+				<li><a href="#about" class="icon-group"><span>A propos</span></a></li>
+				<li ng-show="rateEnabled"><a class="icon-star" ng-click="rateApplication()"><span>Notez cette application!</span></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content">
+		<p class="title">A propos <i class="icon-group"></i></p>
+
+		<div class="panel">
+			<div class="panel-icon"><i class="icon-archive icon-2x"></i></div>
+			<div class="panel-section">
+				<p class="title">Application</p>
+				<p>{{appInfo.name}} (codename {{appInfo.codename}}), version {{appInfo.version}}</p>
+			</div>
+		</div>
+
+		<div class="panel">
+			<div class="panel-icon"><i class="icon-user icon-2x"></i></div>
+			<div class="panel-section">
+				<p class="title">Auteur</p>
+				<p>{{appInfo.author.name}} ({{appInfo.author.email}})
+				<p><span class="icon-download icon-2x" ng-click="showWebsite(appInfo.author.email)"></span></p>
+			</div>
+		</div>
+
+		<p>
+			<i class="icon-question-sign icon-large"></i>
+		</p>
+		<p class="help help-title">
+			{{helpInfo.help1}}
+		</p>
+		<p class="help">
+			{{helpInfo.help2}}
+		</p>
+	</div>
+</div>
+<div spinner id="spinner" ng-show="loading">
+	<img src="img/ajax-loader.gif" class="ajax-loader"/>
+</div>

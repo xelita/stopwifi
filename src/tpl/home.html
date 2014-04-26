@@ -1,0 +1,50 @@
+<div id="home" class="page" ng-init="getWifiStatus()">
+	<div class="header">
+		<div class="btn-group pull-left">
+			<button class="btn dropdown-toggle icon-align-justify" data-toggle="dropdown"></button>
+			<ul class="dropdown-menu">
+				<li ng-show="homeEnabled"><a href="#home" class="icon-home"><span>Accueil</span></a></li>
+				<li><a href="#settings" class="icon-cog"><span>Réglages</span></a></li>
+				<li><a href="#help" class="icon-question-sign"><span>Aide</span></a></li>
+				<li class="divider"></li>
+				<li><a href="#about" class="icon-group"><span>A propos</span></a></li>
+				<li ng-show="rateEnabled"><a class="icon-star" ng-click="rateApplication()"><span>Notez cette application!</span></a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group pull-right">
+			<button class="btn icon-cog" ng-click="getWifiStatus()"></button>
+		</div>
+	</div>
+
+	<div class="content">
+		<p class="title">Accueil <i class="icon-home"></i></p>
+		<p class="desc">
+			Sur cette page, vous pouvez visualiser l'état de votre réseau wifi.
+			Il vous est également possible d'agir sur son état de fonctionnement.
+		</p>
+
+		<div class="panel">
+			<div class="panel-icon"><i class="icon-signal icon-4x"></i></div>
+			<div class="panel-section">
+				<p>Etat Réseau Wifi: {{wifiStatusLabel}}.</p>
+			</div>
+			<div class="panel-section">
+				<button type="button" ng-click="switchWifiStatus()" class="btn btn-large"><i class="icon-off icon-large" ng-class="wifiStatusActionCSS"></i></button>
+			</div>
+		</div>
+
+		<p>
+			<i class="icon-question-sign icon-large"></i>
+		</p>
+		<p class="help help-title">
+			{{helpInfo.help1}}
+		</p>
+		<p class="help">
+			{{helpInfo.help2}}
+		</p>
+	</div>
+</div>
+<div spinner id="spinner" ng-show="loading">
+	<img src="img/ajax-loader.gif" class="ajax-loader"/>
+</div>

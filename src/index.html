@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+
+	<!-- _______________________________________________________________________ -->
+	<!-- Styles -->
+	<!-- _______________________________________________________________________ -->
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+	<!-- Font Awesome-->
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<title>StopWifi</title>
+</head>
+<body>
+<!-- _______________________________________________________________________ -->
+<!-- Content -->
+<!-- _______________________________________________________________________ -->
+<ng-view ng-animate="{enter: 'view-enter', leave: 'view-leave'}"></ng-view>
+
+<!-- _______________________________________________________________________ -->
+<!-- Scripts -->
+<!-- _______________________________________________________________________ -->
+
+<!-- Cordova -->
+<script src="lib/cordova/cordova.js"></script>
+<script src="lib/cordova/cordova-helper.js"></script>
+
+<!-- JQuery -->
+<script src="lib/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="lib/bootstrap/bootstrap.min.js"></script>
+
+<!-- AngularJS -->
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-resource.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="js/mainModule.js"></script>
+<script src="js/cordovaModule.js"></script>
+
+<!-- StartUp -->
+<script src="js/main.js"></script>
+<script type="text/javascript">
+	app.initialize();
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* -------------------------------------------------------------- */
+/* Main Tags */
+/* -------------------------------------------------------------- */
+html, body {
+	background: url('../img/back.png') repeat;
+	padding: 0px;
+	margin: 0px;
+	overflow-x: hidden;
+	line-height: 25px;
+}
+
+button {
+	color: #000000;
+}
+
+a, a:link, a:hover, a:active, a:visited, a:focus {
+	color: white;
+	text-decoration: underline;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+	background: #f5f5f5 none;
+	color: #000000;
+}
+
+.header a {
+	color: white;
+	text-decoration: none;
+}
+
+i {
+	margin: 0px 5px;
+}
+
+.click {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* -------------------------------------------------------------- */
+/* Custom CSS */
+/* -------------------------------------------------------------- */
+
+.page {
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+.header {
+	/*position: fixed;*/
+	width: 100%;
+	height: 50px;
+	background: #F0F0F0;
+	border: 1px solid #CCC;
+	margin: 0px auto;
+}
+
+.header > .btn-group {
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	top: 12px;
+	color: #000000;
+	text-align: left;
+}
+
+.header li {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.header span {
+	margin-left: 5px;
+}
+
+.content {
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.content .title {
+	margin: 30px 30px;
+	font-size: 40px;
+}
+
+.content .desc {
+	text-align: justify;
+	margin: 30px 30px;
+}
+
+.content .help {
+	text-align: center;
+	margin: 10px 30px;
+}
+
+.content .help-title {
+	text-decoration: underline;
+	font-weight: bold;
+	text-align: center;
+}
+
+.panel {
+	margin: 30px 30px;
+	padding: 10px 15px;
+
+	background-color: #b2b2b2;;
+	border-radius: 15px;
+
+	font-size: 15px;
+	color: white;
+}
+
+.panel-icon {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.panel-section {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.panel-section .title {
+	margin: 10px 0px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.panel-section-icon {
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+
+.panel-section-icon span {
+	margin-left: 10px;
+}
+
+#home .panel {
+	font-size: 20px;
+}
+
+#settings .panel {
+	font-size: 20px;
+}
+
+input[type="text"] {
+	height: 20px;
+}
+
+.panel input[type="text"] {
+	width: 200px;
+}
+
+.panel button, input[type="button"] {
+	color: #606060;
+}
+
+.wifi-disabled, .link-disabled {
+	color: #8b0000;
+}
+
+.wifi-enabled, .link-enabled {
+	color: #086a2a;
+}
+
+p.justify {
+	text-justify: inter-word;
+}
+
+p.right {
+	text-align: right;
+	text-justify: none;
+}
+
+p.left {
+	text-align: left;
+	text-justify: none;
+}
+
+p.warning {
+	color: #8b0000;
+}
+
+p.warning > a:link, a:active, a:visited {
+	color: #8b0000;
+}
+
+/* -------------------------------------------------------------- */
+/* Loader */
+/* -------------------------------------------------------------- */
+
+#spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: #808080;
+	opacity: .90;
+}
+
+#spinner .ajax-loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -16px; /* -1 * image width / 2 */
+	margin-top: -16px; /* -1 * image height / 2 */
+	display: block;
+}
+
+/* -------------------------------------------------------------- */
+/* Transitions */
+/* -------------------------------------------------------------- */
+
+.view-enter {
+	transition: opacity .25s ease-in-out .5s;
+	-moz-transition: opacity .25s ease-in-out .5s;
+	-webkit-transition: opacity .25s ease-in-out .5s;
+	opacity: 0;
+}
+
+.view-enter.view-enter-active {
+	opacity: 1;
+}
+
+.view-leave {
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+	opacity: 1;
+}
+
+.view-leave.view-leave-active {
+	opacity: 0;
+}

@@ -1,0 +1,76 @@
+<div id="settings" class="page" ng-init="getAssociationStatus()">
+	<div class="header">
+		<div class="btn-group pull-left">
+			<button class="btn dropdown-toggle icon-align-justify" data-toggle="dropdown"></button>
+			<ul class="dropdown-menu">
+				<li ng-show="homeEnabled"><a href="#home" class="icon-home"><span>Accueil</span></a></li>
+				<li><a href="#settings" class="icon-cog"><span>Réglages</span></a></li>
+				<li><a href="#help" class="icon-question-sign"><span>Aide</span></a></li>
+				<li class="divider"></li>
+				<li><a href="#about" class="icon-group"><span>A propos</span></a></li>
+				<li ng-show="rateEnabled"><a class="icon-star" ng-click="rateApplication()"><span>Notez cette application!</span></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content">
+		<p class="title">Réglages <i class="icon-cog"></i></p>
+		<p class="desc" ng-show="!associationStatus">
+			Il semble que l'application ne soit pas encore associée à votre box.
+			Pour profiter de cette application, vous devez au préalable associer cette application à votre box.
+			Pour cela, entrez l'adresse de votre box et lancer la synchronisation. Vous devez obligatoirement être connecté à votre réseau local pour cette opération.
+		</p>
+		<p class="desc" ng-show="!associationStatus">
+			Une fois la synchronisation en cours, il faut autoriser l'application StopWifi à accéder à votre box.
+			Cela se fait directement sur votre box (à l'endroit ou cette dernière affiche l'heure).
+		</p>
+		<p class="desc" ng-show="associationStatus">
+			L'association entre votre application et votre box est effective. En d'autres termes, votre application est autorisée à accéder à votre box.
+		</p>
+		<p class="desc warning" ng-show="associationStatus">
+			<strong>Attention:</strong> Avant de continuer, veuillez vérifier que votre box est bien accessible par Internet à l'adresse suivante: <span ng-click="showBoxUrl()" class="click">{{user.url}}</span>.
+			Pour de plus amples informations, consultez <span ng-click="showUserGuide()" class="click">le manuel utilisateur</span>.
+		</p>
+		<p class="desc warning" ng-show="associationStatus">
+			<strong>Attention:</strong> Avant de continuer, veuillez vérifier que vous avez bien donné les droits d'accès suivant à l'application 'StopWifi ({{user.deviceName}})' sur la console FreeboxOS: "Modification des réglages de la Freebox".
+			Pour de plus amples informations, consultez <span ng-click="showUserGuide()" class="click">le manuel utilisateur</span>.
+		</p>
+
+
+		<div class="panel" ng-show="!associationStatus">
+			<div class="panel-icon"><i class="icon-link icon-2x"></i></div>
+			<div class="panel-section">
+				<div class="panel-section-icon"><i class="icon-cloud icon-large"></i><span>Adresse de votre box</span></div>
+				<p><input type="text" ng-model="user.url"></p>
+			</div>
+			<div class="panel-section">
+				<button type="button" ng-click="associateAppWithBox()" class="btn btn-large"><i class="icon-off icon-large" ng-class="associationStatusActionCSS"></i></button>
+
+			</div>
+		</div>
+
+		<div class="panel" ng-show="associationStatus">
+			<!--<div class="panel-icon"><i class="icon-link icon-4x" ng-class="associationStatusIconCSS"></i></div>-->
+			<div class="panel-icon"><i class="icon-link icon-4x"></i></div>
+			<div class="panel-section">
+				<p>Etat association: {{associationStatusLabel}}.</p>
+			</div>
+			<div class="panel-section">
+				<button type="button" ng-click="removeAssociateBetweenAppAndBox()" class="btn btn-large"><i class="icon-off icon-large" ng-class="associationStatusActionCSS"></i></button>
+			</div>
+		</div>
+
+		<p>
+			<i class="icon-question-sign icon-large"></i>
+		</p>
+		<p class="help help-title">
+			{{helpInfo.help1}}
+		</p>
+		<p class="help">
+			{{helpInfo.help2}}
+		</p>
+	</div>
+</div>
+<div spinner id="spinner" ng-show="loading">
+	<img src="img/ajax-loader.gif" class="ajax-loader"/>
+</div>
