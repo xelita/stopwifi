@@ -41,11 +41,11 @@ mainModule.config(['$routeProvider', function ($routeProvider) {
 
 mainModule.constant('urls', {
 	authenticationTokenUrl: 'http://mafreebox.free.fr/api/v1/login/authorize',
-	wifiStatus: 'http://ks3093857.kimsufi.com/stopwifi/dispatcher/api/wifi/status',
-	rateUrl: 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=668759815&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software',
-	helpGuideUrl: 'http://www.furiousapps.fr/stopwifi/help/userguide.pdf',
-	onlineSupportUrl: 'http://www.facebook.com/pages/Stopwifi/163594363823968',
-	emailFormUrl: 'support@furiousapps.fr'
+	wifiStatus: 'http://localhost:3000/stopwifi/dispatcher/api/wifi/status',
+	rateUrl: '',
+	helpGuideUrl: '',
+	onlineSupportUrl: '',
+	emailFormUrl: ''
 });
 
 mainModule.constant('appInfo', {
@@ -59,9 +59,9 @@ mainModule.constant('appInfo', {
 mainModule.constant('helpInfo', {
 	help1: "Vous rencontrez des problèmes?",
 	help2: "Utilisez le menu 'aide' ou contactez le support (support@furiousapps.fr).",
-	helpGuideUrl: 'http://www.furiousapps.fr/stopwifi/help/guides',
-	supportUrl: 'http://www.facebook.com',
-	supportEmail: 'support@furiousapps.fr'
+	helpGuideUrl: '',
+	supportUrl: '',
+	supportEmail: ''
 });
 
 // MainService
@@ -167,8 +167,6 @@ mainModule.controller('MainCtrl', ['$rootScope', '$scope', '$location', '$log', 
 			$scope.user = {url: app.account.url, appToken: app.account.appToken, deviceName: app.account.deviceName};
 		}
 		else {
-			//$scope.user = {url: 'http://88.174.208.251', appToken: '', deviceName: ''};
-			//$scope.user = {url: 'http://testing.furiousapps.fr', appToken: '', deviceName: ''};
 			$scope.user = {url: 'http://', appToken: '', deviceName: ''};
 		}
 	});
